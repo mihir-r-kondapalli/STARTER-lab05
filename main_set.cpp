@@ -146,7 +146,5 @@ int main(int argv, char** argc){
   
   run_game(alice_cards, bob_cards);
 
-  cout << endl;
-
   return 0;
 }

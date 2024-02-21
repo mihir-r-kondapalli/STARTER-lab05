@@ -7,7 +7,7 @@ game_set: card.o main_set.o
 	${CXX} ${CXXFLAGS} card.o main_set.o -o game_set
 
 game: card.o card_list.o main.o
-	${CXX} ${CXXFLAGS} card.o main.o -o game
+	${CXX} ${CXXFLAGS} card.o card_list.o main.o -o game
 
 tests: card.o card_list.o tests.o
 	${CXX} ${CXXFLAGS} card.o card_list.o tests.o -o tests

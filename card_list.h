@@ -6,25 +6,24 @@
 #define CARD_LIST_H
 
 #include "card.h"
+#include <vector>
 
 class CardBST
 {
     public:
 
-        BST();
+        CardBST();
         void insert(Card* card);
-        void getSuccessor(Card* card);
-        void getPredecessor(Card* node)
+        bool contains(Card* card);
+        Card* getMin();
+        Card* getMax();
+        Card* getPredecessor(Card* card);
+        Card* getSuccessor(Card* card);
         void remove(Card* card);
-        ~BST();
+        void printBST();
+        ~CardBST();
 
     private:
-
-        void insertHelper(Card* card, Node* start);
-        void getSuccessorHelper(Card* card, Node* start);
-        void getPredecessorHelper(Card* card, Node* start)
-        void removeHelper(Card* card, Node* start);
-        void clear(Node* root);
 
         struct Node
         {
@@ -34,9 +33,21 @@ class CardBST
             Node* parent;
 
             Node(Card* inCard = nullptr): card(inCard), left(0), right(0), parent(0) {}
+            ~Node() {delete card;}
         };
 
         Node* head;
+
+        void insertHelper(Card* card, Node* start);
+        bool containsHelper(Card* card, Node* start);
+        Card* getMinHelper(Node* root);
+        Card* getMaxHelper(Node* root);
+        Node* getNodeFor(Card* card, Node* start);
+        Node* getPredecessorHelper(Card* card, Node* start);
+        Node* getSuccessorHelper(Card* card, Node* start);
+        void removeHelper(Card* card, Node* start);
+        void clear(Node* start);
+        void printInOrderBSTHelper(Node* start);
 };
 
 #endif
