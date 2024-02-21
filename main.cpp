@@ -25,13 +25,13 @@ int main(int argv, char** argc){
 
   //Read each file
   while (getline (cardFile1, line) && (line.length() > 0)){
-
+    Card* card = new Card(line);
   }
   cardFile1.close();
 
 
   while (getline (cardFile2, line) && (line.length() > 0)){
-
+    Card* card = new Card(line);
   }
   cardFile2.close();
   
