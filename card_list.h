@@ -19,8 +19,10 @@ class CardBST
         Card* getMax();
         Card* getPredecessor(Card* card);
         Card* getSuccessor(Card* card);
-        void remove(Card* card);
+        int getHeight();
+        bool remove(Card* card);
         void printBST();
+        void printPreBST();
         ~CardBST();
 
     private:
@@ -45,9 +47,13 @@ class CardBST
         Node* getNodeFor(Card* card, Node* start);
         Node* getPredecessorHelper(Card* card, Node* start);
         Node* getSuccessorHelper(Card* card, Node* start);
-        void removeHelper(Card* card, Node* start);
+        int getHeightHelper(Node* start);
+        bool removeHead(Node* n);
+        bool removeHelper(Node* c, Node* start);
         void clear(Node* start);
+        void check_node(Node* n);
         void printInOrderBSTHelper(Node* start);
+        void printPreOrderBSTHelper(Node* start);
 };
 
 #endif

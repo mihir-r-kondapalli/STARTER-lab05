@@ -93,22 +93,12 @@ void run_game(CardBST& alice_cards, CardBST& bob_cards)
   cout << endl;
   cout << "Alice's cards:" << endl;
 
-  Card* temp = alice_cards.getMin();
-  while(temp!=nullptr) 
-  {
-    cout << temp->toString() << endl;
-    temp = alice_cards.getSuccessor(temp);
-  }
+  alice_cards.printBST();
 
   cout << endl;
   cout << "Bob's cards:" << endl;
 
-  temp = bob_cards.getMin();
-  while(temp!=nullptr) 
-  {
-    cout << temp->toString() << endl;
-    temp = bob_cards.getSuccessor(temp);
-  }
+  bob_cards.printBST();
 }
 
 

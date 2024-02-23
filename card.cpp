@@ -91,6 +91,12 @@ int Card::compare(const Card& card) const
     return 0;
 }
 
+void Card::operator=(const Card& card)
+{
+    suite = card.getSuite();
+    val = card.getVal();
+}
+
 bool Card::operator>(const Card& card) const
 {
     return compare(card) > 0;

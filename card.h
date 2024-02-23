@@ -16,6 +16,7 @@ class Card
         int getSuite() const;
         int getVal() const;
         int compare(const Card& card) const;
+        void operator=(const Card & card);
         bool operator>(const Card & card) const;
         bool operator<(const Card & card) const;
         bool operator==(const Card & card) const;
